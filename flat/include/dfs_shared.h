@@ -42,7 +42,7 @@ typedef struct dfs_inode {
 #define DFS_MAX_FILESYSTEM_SIZE 0x1000000  // 16MB
 #define DFS_MAX_NUM_BLOCKS 16384
 
-#define DFS_BITS_PER_BYTE
+#define DFS_BITS_PER_BYTE 8 // ??
 
 #define DFS_FBV_BITS_PER_ENTRY
 #define DFS_FBV_MAX_NUM_WORDS ((DFS_MAX_FILESYSTEM_SIZE / DFS_BLOCKSIZE) / 32)  //num indexes for fbv array
