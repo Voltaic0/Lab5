@@ -19,11 +19,11 @@ typedef struct dfs_block {
   
 } dfs_block;
 
-#define DFS_INODE_FILENAME_MAX 96
+#define DFS_INODE_FILENAME_MAX 76
 #define DFS_INODE_NUM_DIRECT_ADDRESSED_BLOCKS 10
-#define DFS_INODE_NUM_INDIRECT_ADDRESSED_BLOCKS
-#define DFS_INODE_MAX_VIRTUAL_BLOCKS
-#define DFS_INODE_MAX_NUM 192
+#define DFS_INODE_NUM_INDIRECT_ADDRESSED_BLOCKS 1
+#define DFS_INODE_MAX_VIRTUAL_BLOCKS 16
+#define DFS_INODE_MAX_NUM 192 //number of inodes
 
 typedef struct dfs_inode {
   // STUDENT: put inode structure internals here
@@ -32,8 +32,8 @@ typedef struct dfs_inode {
   // adjust the maximumm length of the filename until the size of the overall inode 
   // is 128 bytes.
   int inuse;
-  uint32 fileSize;
-  char filename[DFS_INODE_FILENAME_MAX];
+  uint32 fileSize; //max byte that has been written to this file
+  char filename[DFS_INODE_FILENAME_MAX]; //changed to 76 char (76 bytes from 128-52)
   uint32 directAddr[DFS_INODE_NUM_DIRECT_ADDRESSED_BLOCKS];
   uint32 indirectAddr;
 
@@ -45,9 +45,9 @@ typedef struct dfs_inode {
 #define DFS_BITS_PER_BYTE 8 // ??
 
 #define DFS_FBV_BITS_PER_ENTRY
-#define DFS_FBV_MAX_NUM_WORDS ((DFS_MAX_FILESYSTEM_SIZE / DFS_BLOCKSIZE) / 32)  //num indexes for fbv array
+#define DFS_FBV_MAX_NUM_WORDS ((DFS_MAX_FILESYSTEM_SIZE / DFS_BLOCKSIZE) / 32)  //num indexes for fbv array (not sure)
 
-#define DFS_SUPER_BLOCK_PHY_BLOPCK_NUM
+#define DFS_SUPER_BLOCK_PHY_BLOCK_NUM 1 //also not sure
 
 #define DFS_FAIL -1
 #define DFS_SUCCESS 1

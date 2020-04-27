@@ -16,6 +16,7 @@ typedef unsigned int uint32;
 #endif
 
 //STUDENT: define additional parameters here, if any
+#define FDISK_FBV_NUM_BLOCKS 2 //lab doc says free block vector is blocks 17 and 18 so this is 2 i think
 
 
 #endif
